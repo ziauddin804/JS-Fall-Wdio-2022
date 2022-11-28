@@ -33,12 +33,12 @@
         expect(isFemaleGenderSelected, 'Female gender is already selected').to.be.false;
 
         // 4. Verify male-gender button is not selected
-        const maleRadioButton = await $('input[value="1"]');
+        const maleRadioButton = await $('input[value="2"]');
         const isMaleGenderSelected = await maleRadioButton.isSelected();
         expect(isMaleGenderSelected, 'Male gender is already selected').to.be.false;
 
         // 5. Verify custom-gender button is not selected
-        const customRadioButton = await $('input[value="1"]');
+        const customRadioButton = await $('input[value="-1"]');
         const isCustomGenderSelected = await customRadioButton.isSelected();
         expect(isCustomGenderSelected, 'Custom gender is already selected').to.be.false;
 
