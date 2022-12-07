@@ -32,7 +32,22 @@
     * Expected error msg -> The email address or mobile number you entered isn't connected to an account.
     */
     it('TC - 2', async () => {
-       
+        await browser.url('https://www.facebook.com');
+
+        await browser.pause(3000);
+
+        const loginErrorLink = await $('=user gets error when submits empty login form');
+        const isLoginErrorLinkEnabled = await loginErrorLink.isEnabled();
+        expect(isLoginErrorLinkEnabled, 'user gets error when submits empty login form').to.be.true;
+
+        await browser.pause(3000);
+
+        const loginErrorText = await $('div*=The email address or mobile number');
+        const isLoginErrorTextDisplayed = await loginErrorText.isDisplayed();
+        expect(isLoginErrorTextDisplayed, 'Login error text is NOT displayed').to.be.true;
+
+        await browser.pause(3000);
+
     });
 
 
